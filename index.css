@@ -22,7 +22,7 @@
     --fs-logo: clamp(1.75rem, 4vw, 3rem);
 
     /* 2. Pentru "+ Add book" sau titlul cărții din card (între 20px și 28px) */
-    --fs-title: clamp(1.2rem, 2vw, 1.4rem);
+    --fs-title: clamp(1.25rem, 2vw, 1.5rem);
 
     /* 3. Pentru textul normal (autor, textul de pe butoanele Read/Remove) (între 16px și 18px) */
     --fs-body: clamp(1rem, 1vw, 1.125rem);
@@ -45,8 +45,8 @@ body {
 /* Header */
 header {
 
-    padding-top: clamp(20px, 4vw, 50px);
-    padding-bottom: clamp(20px, 4vw, 50px);
+    padding-top: clamp(18px, 4vw, 32px);
+    padding-bottom: clamp(18px, 4vw, 32px);
 
     display: flex;
     justify-content: center;
@@ -102,12 +102,26 @@ header {
 }
 /* Header */
 
+main {
+
+    flex: 1;
+    background-color: var(--bg-body);
+}
+
 /* Footer */
 footer {
+
+    font-size: var(--fs-title);
+
+    background-color: var(--bg-header);
+    color: var(--text-main);
     
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: auto;
+
+    padding-top: clamp(15px, 3vw, 22px);
+    padding-bottom: clamp(15px, 3vw, 22px);
 }
 /* Footer */
