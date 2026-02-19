@@ -8,16 +8,27 @@
 
 :root {
  
-  --bg-header: #0F172A;
-  --bg-body: #1E293B;
-  --bg-card: #475569;
+    --bg-header: #0F172A;
+    --bg-body: #1E293B;
+    --bg-card: #475569;
   
-  --text-main: #F1F5F9;
+    --text-main: #F1F5F9;
   
-  --btn-read: #10B981;
-  --btn-unread: #F43F5E;
+    --btn-read: #10B981;
+    --btn-unread: #F43F5E;
   
-  --text-btn: #FFFFFF; 
+    --text-btn: #FFFFFF; 
+
+    --fs-logo: clamp(1.75rem, 4vw, 3rem);
+
+    /* 2. Pentru "+ Add book" sau titlul cărții din card (între 20px și 28px) */
+    --fs-title: clamp(1.2rem, 2vw, 1.4rem);
+
+    /* 3. Pentru textul normal (autor, textul de pe butoanele Read/Remove) (între 16px și 18px) */
+    --fs-body: clamp(1rem, 1vw, 1.125rem);
+
+    /* 4. Pentru detalii mai mici (ex: "123 pages") (între 14px și 16px) */
+    --fs-small: clamp(0.875rem, 0.5vw, 1rem);
 }
 
 body {
@@ -26,5 +37,77 @@ body {
 
     display: flex;
     flex-direction: column;
+
+    min-height: 100vh;
 }
 /* prerequisites */
+
+/* Header */
+header {
+
+    padding-top: clamp(20px, 4vw, 50px);
+    padding-bottom: clamp(20px, 4vw, 50px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg-header);
+    color: var(--text-main);
+
+    h1 {
+
+        font-size: var(--fs-logo);
+    }
+
+    span {
+
+        font-size: var(--fs-title)
+    }
+
+    div:first-child {
+
+        width: 80%;
+        max-width: 1200px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    div:first-child > div {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+
+        border-radius: 8px;
+
+        cursor: pointer;
+    }
+
+    div:first-child > div:hover {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        
+        background-color: #64748B;
+    }
+}
+/* Header */
+
+/* Footer */
+footer {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+/* Footer */
