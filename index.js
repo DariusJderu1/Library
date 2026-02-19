@@ -15,8 +15,26 @@ function addBook(bookList, title, author, pages, read) {
     bookList.push(new Book(title, author, pages, read));
 }
 
+function displayBooks(books) {
+
+    const booksContainer = document.querySelector(".books-container");
+
+    for(const book of books) {
+
+        const newDiv = document.createElement("article");
+        newDiv.classList.add("book-card");
+        booksContainer.appendChild(newDiv);
+    }
+    
+}
+
+//**********************************************
+
 const bookList = [];
 
 addBook(bookList, "Ana", "ARe", 23, false);
+addBook(bookList, "Ana", "ARe", 23, false);
+addBook(bookList, "Ana", "ARe", 23, false);
+addBook(bookList, "Ana", "ARe", 23, false);
 
-console.log(bookList);
+displayBooks(bookList);

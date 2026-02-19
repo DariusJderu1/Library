@@ -106,13 +106,24 @@ main {
 
     flex: 1;
     background-color: var(--bg-body);
-}
 
-main.books-container {
+    display: flex;
+    justify-content: center;
+    
+    padding-top: clamp(32px, 5vw, 64px);
+    padding-bottom: clamp(32px, 5vw, 64px);
+}
+div.books-container {
 
     width: 75%;
-    height: auto;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 1fr);
 
+    article {
+
+        
+    }
 }
 
 /* Footer */
