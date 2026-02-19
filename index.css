@@ -108,6 +108,13 @@ main {
     background-color: var(--bg-body);
 }
 
+main.books-container {
+
+    width: 75%;
+    height: auto;
+
+}
+
 /* Footer */
 footer {
 
