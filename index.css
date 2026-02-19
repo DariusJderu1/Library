@@ -1,0 +1,30 @@
+/* prerequisites */
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+ 
+  --bg-header: #0F172A;
+  --bg-body: #1E293B;
+  --bg-card: #475569;
+  
+  --text-main: #F1F5F9;
+  
+  --btn-read: #10B981;
+  --btn-unread: #F43F5E;
+  
+  --text-btn: #FFFFFF; 
+}
+
+body {
+
+    font-family: "Merriweather", serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    display: flex;
+    flex-direction: column;
+}
+/* prerequisites */
