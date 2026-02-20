@@ -36,6 +36,16 @@ body {
 
     min-height: 100vh;
 }
+
+button {
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+}
 /* prerequisites */
 
 /* Header */
@@ -140,7 +150,6 @@ article.book-card {
 
     button {
 
-        font-family: inherit;
         font-size: var(--fs-small);
         font-weight: 600;
 
@@ -148,10 +157,6 @@ article.book-card {
         max-width: 500px;
 
         padding: 12px 24px;
-        border: none;
-        border-radius: 8px;
-
-        cursor: pointer;
     }
     button.remove-button {
 
@@ -212,12 +217,38 @@ main div.form-container {
         flex-direction: column;
         gap: 25px;
     }
+    form > div {
+
+        font-size: var(--fs-small);
+        display: flex;
+        gap: 10px;
+    }
 
     input {
 
         font-family: inherit;
+        font-size: var(--fs-small);
 
-        
+        padding: clamp(12px, 2vh, 16px) clamp(16px, 3vw, 24px);
+    }
+    input[type="checkbox"] {
+
+        accent-color: white;
+        width: 1em;
+    }
+
+    button {
+
+        font-size: var(--fs-small);
+        font-weight: 600;
+        padding: 12px 24px;
+
+        background-color: #10B981;
+        color: var(--text-btn);
+    }
+    button:hover {
+
+        background-color: #059669;
     }
 }
 /* Main */
