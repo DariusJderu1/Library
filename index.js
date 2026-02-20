@@ -64,3 +64,12 @@ addBook(bookList, "Ana", "ARe", 23, false);
 addBook(bookList, "Ana", "ARe", 23, true);
 
 displayBooks(bookList);
+
+// Pop up part
+const popUp = document.getElementById("pop-up");
+const addBookDiv = document.getElementById("add-book");
+
+addBookDiv.addEventListener("click", () => {
+
+    popUp.showModal();
+});
