@@ -132,6 +132,9 @@ div.books-container {
 }
 article.book-card {
 
+    -webkit-box-shadow: 0px 0px 10px 0px #000000; 
+    box-shadow: 0px 0px 10px 0px #000000;
+
     padding: var(--card-padding);
     border-radius: 10px;
     background-color: var(--bg-card);
@@ -192,7 +195,6 @@ main div.form-container {
     color: var(--text-main);
 
     border-radius: 10px;
-
     padding: var(--card-padding);
 
     position: absolute;
@@ -230,6 +232,13 @@ main div.form-container {
         font-size: var(--fs-small);
 
         padding: clamp(12px, 2vh, 16px) clamp(16px, 3vw, 24px);
+
+        border-radius: 8px;
+        border: none;
+    }
+    input[type="text"]:focus, input[type="number"]:focus {
+
+        outline: 3px solid aquamarine;
     }
     input[type="checkbox"] {
 
