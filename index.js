@@ -35,7 +35,7 @@ function displayBooks(books) {
         pagesSpan.innerText = book.pages;
 
         const readButton = document.createElement("button");
-        readButton.innerText = book.read == true ? "Read" : "Not read";
+        readButton.innerText = book.read === true ? "Read" : "Not read";
         if(book.read)
             readButton.classList.add("read");
         else
@@ -51,7 +51,6 @@ function displayBooks(books) {
         newCard.appendChild(readButton);
         newCard.appendChild(removeButton);
     }
-    
 }
 
 //**********************************************
@@ -70,6 +69,11 @@ const popUp = document.getElementById("pop-up");
 const addBookDiv = document.getElementById("add-book");
 const submitButton = document.getElementById("submit-button");
 
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById("author");
+const pagesInput = document.getElementById("pages");
+const readCheckBox = document.getElementById("read");
+
 // When the add book button is being pressed
 addBookDiv.addEventListener("click", () => {
 
@@ -84,7 +88,17 @@ popUp.addEventListener("click", (event) => {
         popUp.close();
 });
 
-submitButton.addEventListener("click", () => {
+// When the user submits the form, the pop closes
+submitButton.addEventListener("click", (event) => {
+
+    event.preventDefault();
+
+    const booksContainer = document.querySelector(".books-container");
+    booksContainer.innerHTML = "";
+
+    addBook(bookList, titleInput.value, authorInput.value, pagesInput.value, readCheckBox.checked);
+
+    displayBooks(bookList);
 
     popUp.close();
 });
