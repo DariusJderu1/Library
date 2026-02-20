@@ -25,7 +25,7 @@
     --fs-title: clamp(1.25rem, 2vw, 1.5rem);
 
     /* 3. Pentru textul normal (autor, textul de pe butoanele Read/Remove) (între 16px și 18px) */
-    --fs-body: clamp(1rem, 1vw, 1.125rem);
+    --fs-body: clamp(1.2rem, 1.3vw, 1.4rem);
 
     /* 4. Pentru detalii mai mici (ex: "123 pages") (între 14px și 16px) */
     --fs-small: clamp(0.875rem, 0.5vw, 1rem);
@@ -118,11 +118,32 @@ div.books-container {
     width: 75%;
     
     display: grid;
-    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 
-    article {
+    gap: 25px;
+}
+article.book-card {
 
-        
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--bg-card);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    span {
+
+        font-size: var(--fs-body);
+        color: var(--text-main);
+    }    
+
+    button {
+
+        font-family: inherit;
+        align-self: stretch;
     }
 }
 

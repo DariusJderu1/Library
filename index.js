@@ -21,9 +21,30 @@ function displayBooks(books) {
 
     for(const book of books) {
 
-        const newDiv = document.createElement("article");
-        newDiv.classList.add("book-card");
-        booksContainer.appendChild(newDiv);
+        const newCard = document.createElement("article");
+        newCard.classList.add("book-card");
+        booksContainer.appendChild(newCard);
+
+        const titleSpan = document.createElement("span");
+        titleSpan.innerText = book.title;
+
+        const authorSpan = document.createElement("span");
+        authorSpan.innerText = book.author;
+
+        const pagesSpan = document.createElement("span");
+        pagesSpan.innerText = book.pages;
+
+        const readButton = document.createElement("button");
+        readButton.innerText = "Read" ? book.read == true : "Not read";
+
+        const removeButton = document.createElement("button");
+        removeButton.innerText = "Remove";
+
+        newCard.appendChild(titleSpan);
+        newCard.appendChild(authorSpan);
+        newCard.appendChild(pagesSpan);
+        newCard.appendChild(readButton);
+        newCard.appendChild(removeButton);
     }
     
 }
@@ -33,8 +54,8 @@ function displayBooks(books) {
 const bookList = [];
 
 addBook(bookList, "Ana", "ARe", 23, false);
+addBook(bookList, "Ana", "ARe", 23, true);
 addBook(bookList, "Ana", "ARe", 23, false);
-addBook(bookList, "Ana", "ARe", 23, false);
-addBook(bookList, "Ana", "ARe", 23, false);
+addBook(bookList, "Ana", "ARe", 23, true);
 
 displayBooks(bookList);
