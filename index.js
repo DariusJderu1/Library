@@ -9,6 +9,10 @@ function Book(title, author, pages, read) {
     this.read = read;
     this.id = crypto.randomUUID();
 }
+Book.prototype.changeStatus = function() {
+
+    this.read = !this.read;
+}
 
 function addBook(bookList, title, author, pages, read) {
 
@@ -40,6 +44,7 @@ function displayBooks(books) {
             readButton.classList.add("read");
         else
             readButton.classList.add("unread");
+        readButton.dataset.id = book.id;
 
         const removeButton = document.createElement("button");
         removeButton.classList.add("remove-button");
@@ -110,4 +115,31 @@ form.addEventListener("submit", (event) => {
     // pagesInput.value = "";
     // readCheckBox.checked = false;
     form.reset();
+});
+
+//Change status part
+const booksContainer = document.querySelector(".books-container");
+
+booksContainer.addEventListener("click", event => {
+
+    if(event.target.matches(".read") || event.target.matches(".unread")) {
+
+        const idBookToToggle = event.target.dataset.id;
+
+        const index = bookList.findIndex(book => {
+
+            return book.id === idBookToToggle;
+        });
+
+        if(index !== -1) {
+
+            bookList[index].changeStatus();
+
+            event.target.innerText = bookList[index].read ? "Read" : "Not read";
+
+            event.target.classList.toggle("read");
+
+            event.target.classList.toggle("unread");
+        }
+    }
 });
