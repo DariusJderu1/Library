@@ -35,7 +35,7 @@ function displayBooks(books) {
         pagesSpan.innerText = book.pages;
 
         const readButton = document.createElement("button");
-        readButton.innerText = "Read" ? book.read == true : "Not read";
+        readButton.innerText = book.read == true ? "Read" : "Not read";
 
         const removeButton = document.createElement("button");
         removeButton.innerText = "Remove";
