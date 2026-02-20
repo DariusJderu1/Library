@@ -68,8 +68,23 @@ displayBooks(bookList);
 // Pop up part
 const popUp = document.getElementById("pop-up");
 const addBookDiv = document.getElementById("add-book");
+const submitButton = document.getElementById("submit-button");
 
+// When the add book button is being pressed
 addBookDiv.addEventListener("click", () => {
 
     popUp.showModal();
+});
+
+// When the user presses the popUp (exactly the pop up, so basically the overlay)
+// not the div and its insides (like input and so on)
+popUp.addEventListener("click", (event) => {
+
+    if(event.target === popUp) 
+        popUp.close();
+});
+
+submitButton.addEventListener("click", () => {
+
+    popUp.close();
 });
