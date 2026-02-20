@@ -109,4 +109,5 @@ form.addEventListener("submit", (event) => {
     titleInput.value = "";
     authorInput.value = "";
     pagesInput.value = "";
+    readCheckBox.checked = false;
 });
