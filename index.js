@@ -36,8 +36,13 @@ function displayBooks(books) {
 
         const readButton = document.createElement("button");
         readButton.innerText = book.read == true ? "Read" : "Not read";
+        if(book.read)
+            readButton.classList.add("read");
+        else
+            readButton.classList.add("unread");
 
         const removeButton = document.createElement("button");
+        removeButton.classList.add("remove-button");
         removeButton.innerText = "Remove";
 
         newCard.appendChild(titleSpan);

@@ -156,6 +156,30 @@ article.book-card {
 
         cursor: pointer;
     }
+    button.remove-button {
+
+        background-color: #EFEFEF;
+    }
+    button.remove-button:hover {
+
+        background-color: #D7D7D7;
+    }
+    button.read {
+
+        background-color: #10B981;
+    }
+    button.read:hover {
+
+        background-color: #059669;
+    }
+    button.unread {
+
+        background-color: #F43F5E;
+    }
+    button.unread:hover {
+
+        background-color: #E11D48;
+    }
 }
 
 /* Footer */
