@@ -70,7 +70,7 @@ const bookList = [];
 // Pop up part
 const popUp = document.getElementById("pop-up");
 const addBookDiv = document.getElementById("add-book");
-const submitButton = document.getElementById("submit-button");
+const form = document.getElementById("book-form");
 const removeButtons = document.querySelectorAll(".remove-button");
 
 const titleInput = document.getElementById("title");
@@ -93,7 +93,7 @@ popUp.addEventListener("click", (event) => {
 });
 
 // When the user submits the form, the pop closes
-submitButton.addEventListener("click", (event) => {
+form.addEventListener("submit", (event) => {
 
     event.preventDefault();
 
@@ -105,4 +105,8 @@ submitButton.addEventListener("click", (event) => {
     displayBooks(bookList);
 
     popUp.close();
+
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
 });
