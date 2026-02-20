@@ -71,7 +71,6 @@ const bookList = [];
 const popUp = document.getElementById("pop-up");
 const addBookDiv = document.getElementById("add-book");
 const form = document.getElementById("book-form");
-const removeButtons = document.querySelectorAll(".remove-button");
 
 const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
@@ -106,8 +105,9 @@ form.addEventListener("submit", (event) => {
 
     popUp.close();
 
-    titleInput.value = "";
-    authorInput.value = "";
-    pagesInput.value = "";
-    readCheckBox.checked = false;
+    // titleInput.value = "";
+    // authorInput.value = "";
+    // pagesInput.value = "";
+    // readCheckBox.checked = false;
+    form.reset();
 });
