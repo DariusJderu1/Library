@@ -44,6 +44,16 @@ function displayBooks(books) {
         const removeButton = document.createElement("button");
         removeButton.classList.add("remove-button");
         removeButton.innerText = "Remove";
+        removeButton.dataset.id = book.id;
+        removeButton.addEventListener("click", () => {
+
+            const idBookToDelete = book.id;
+            const index = books.findIndex(book => book.id === idBookToDelete);
+            if(index !== -1)
+                books.splice(index, 1);
+
+            newCard.remove();
+        });
 
         newCard.appendChild(titleSpan);
         newCard.appendChild(authorSpan);
@@ -57,17 +67,11 @@ function displayBooks(books) {
 
 const bookList = [];
 
-addBook(bookList, "Ana", "ARe", 23, false);
-addBook(bookList, "Ana", "ARe", 23, true);
-addBook(bookList, "Ana", "ARe", 23, false);
-addBook(bookList, "Ana", "ARe", 23, true);
-
-displayBooks(bookList);
-
 // Pop up part
 const popUp = document.getElementById("pop-up");
 const addBookDiv = document.getElementById("add-book");
 const submitButton = document.getElementById("submit-button");
+const removeButtons = document.querySelectorAll(".remove-button");
 
 const titleInput = document.getElementById("title");
 const authorInput = document.getElementById("author");
