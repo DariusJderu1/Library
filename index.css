@@ -20,15 +20,11 @@
     --text-btn: #FFFFFF; 
 
     --fs-logo: clamp(1.75rem, 4vw, 3rem);
-
-    /* 2. Pentru "+ Add book" sau titlul cărții din card (între 20px și 28px) */
     --fs-title: clamp(1.25rem, 2vw, 1.5rem);
-
-    /* 3. Pentru textul normal (autor, textul de pe butoanele Read/Remove) (între 16px și 18px) */
     --fs-body: clamp(1.5rem, 1.6vw, 1.7rem);
-
-    /* 4. Pentru detalii mai mici (ex: "123 pages") (între 14px și 16px) */
     --fs-small: clamp(1.1rem, 1vw, 1.25rem);
+
+    --card-padding: 20px;
 }
 
 body {
@@ -102,6 +98,7 @@ header {
 }
 /* Header */
 
+/* Main */
 main {
 
     flex: 1;
@@ -125,7 +122,7 @@ div.books-container {
 }
 article.book-card {
 
-    padding: 20px;
+    padding: var(--card-padding);
     border-radius: 10px;
     background-color: var(--bg-card);
 
@@ -181,6 +178,49 @@ article.book-card {
         background-color: #E11D48;
     }
 }
+
+main div.form-container {
+
+    width: clamp(350px, 30vw, 500px);
+
+    background-color: var(--bg-card);
+    color: var(--text-main);
+
+    border-radius: 10px;
+
+    padding: var(--card-padding);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h2 {
+
+        text-align: center;
+    }
+
+    form {
+
+        justify-self: stretch;
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    input {
+
+        font-family: inherit;
+
+        
+    }
+}
+/* Main */
 
 /* Footer */
 footer {
